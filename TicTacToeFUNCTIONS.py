@@ -74,12 +74,22 @@ def check_diagonal_win(active_board):
     return False
 
 
+def check_tie(active_board):
+    for row in active_board:
+        if "_" in [x[0] for x in row]:
+            return False
+    print("TIE")
+    return True
+
+
 def check_for_win(active_board):
     if check_row_win(active_board):
         return True
     elif check_column_win(active_board):
         return True
     elif check_diagonal_win(active_board):
+        return True
+    elif check_tie(active_board):
         return True
     else:
         return False
