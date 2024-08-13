@@ -23,13 +23,15 @@ while play_game:
         player1move = input("PLAYER1(X) Move: ")
         open_spot = update_board(player1move, "X")
         display()
-        player_turn = 2
-        if check_for_win(board):
-            play_game = False
+        if open_spot:
+            player_turn = 2
+            if check_for_win(board):
+                play_game = False
     elif player_turn == 2:
         player2move = input("PLAYER2(O) Move: ")
         open_spot = update_board(player2move, "O")
         display()
-        player_turn = 1
-        if check_for_win(board):
-            play_game = False
+        if open_spot:
+            player_turn = 1
+            if check_for_win(board):
+                play_game = False
