@@ -1,21 +1,12 @@
 #################VISUALS########################
-intro = ("Welcome to TicTacToe!"
-         "  PLAYER1(X) PLAYER2(O)")
-
-board = [
-    [["_"], ["_"], ["_"]],
-    [["_"], ["_"], ["_"]],
-    [["_"], ["_"], ["_"]]
-]
-
-moves = ["X", "O"]
+intro = "Welcome to TicTacToe!\nPLAYER1(X) PLAYER2(O)"
 
 
 #############FUNCTIONS################
 
 
-def display():
-    for row in board:
+def display(active_display):
+    for row in active_display:
         print(row)
 
 
