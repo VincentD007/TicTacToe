@@ -28,13 +28,14 @@ def check_row_win(active_board):
                 sequential_plays_x += 1
             elif play[0] == "O":
                 sequential_plays_o += 1
-        if sequential_plays_x == 3:
-            print("PLAYER1 WINS!")
-            return True
-        elif sequential_plays_o == 3:
-            print("PLAYER2 WINS!")
-            return True
-        return False
+
+            if sequential_plays_x == 3:
+                print("PLAYER1 WINS!")
+                return True
+            elif sequential_plays_o == 3:
+                print("PLAYER2 WINS!")
+                return True
+    return False
 
 
 def check_column_win(active_board):

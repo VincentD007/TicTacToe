@@ -5,6 +5,14 @@ display()
 
 
 def update_board(move, player_icon):
+    if len(move) > 2 or len(move) < 2:
+        print("Not a valid move! Try again.")
+        return False
+    else:
+        for value in move:
+            if value not in [str(num) for num in range(11)]:
+                print("Not a valid move! Try again.")
+                return False
     row = int(move[0]) - 1
     column = int(move[1]) - 1
     if board[row][column][0] == "_":
