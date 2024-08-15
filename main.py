@@ -1,15 +1,5 @@
 from TicTacToeFUNCTIONS import display, intro, check_for_win
 
-board = [
-    [["_"], ["_"], ["_"]],
-    [["_"], ["_"], ["_"]],
-    [["_"], ["_"], ["_"]]
-]
-
-
-print(intro)
-display(board)
-
 
 def update_board(move, player_icon, active_board):
     if len(move) > 2 or len(move) < 2:
@@ -30,23 +20,40 @@ def update_board(move, player_icon, active_board):
         return False
 
 
-play_game = True
-player_turn = 1
+def game():
 
-while play_game:
-    if player_turn == 1:
-        player1move = input("PLAYER1(X) Move: ")
-        open_spot = update_board(player1move, "X", board)
-        display(board)
-        if open_spot:
-            player_turn = 2
-            if check_for_win(board):
-                play_game = False
-    elif player_turn == 2:
-        player2move = input("PLAYER2(O) Move: ")
-        open_spot = update_board(player2move, "O", board)
-        display(board)
-        if open_spot:
-            player_turn = 1
-            if check_for_win(board):
-                play_game = False
+    board = [
+        [["_"], ["_"], ["_"]],
+        [["_"], ["_"], ["_"]],
+        [["_"], ["_"], ["_"]]
+    ]
+
+    print(intro)
+    display(board)
+
+    play_game = True
+    player_turn = 1
+
+    while play_game:
+        if player_turn == 1:
+            player1move = input("PLAYER1(X) Move: ")
+            open_spot = update_board(player1move, "X", board)
+            display(board)
+            if open_spot:
+                player_turn = 2
+                if check_for_win(board):
+                    play_game = False
+        elif player_turn == 2:
+            player2move = input("PLAYER2(O) Move: ")
+            open_spot = update_board(player2move, "O", board)
+            display(board)
+            if open_spot:
+                player_turn = 1
+                if check_for_win(board):
+                    play_game = False
+    play = input("Play TicTacToe?\n'Y' or 'N': ")
+    if play.lower() == "y":
+        game()
+
+
+game()
